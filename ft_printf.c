@@ -6,7 +6,7 @@
 /*   By: mgarabei <mgarabei@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:11:52 by mgarabei          #+#    #+#             */
-/*   Updated: 2023/07/13 11:23:21 by mgarabei         ###   ########.fr       */
+/*   Updated: 2023/07/13 11:25:46 by mgarabei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,9 +118,6 @@ void	ft_hex(unsigned int x, int *count, char x_or_x)
 	while (i--)
 		ft_char(string[i], count);
 }*/
-
-
-
 
 static int	ft_flag(char s, va_list *args, int *count)
 {
