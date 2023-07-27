@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   txt.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgarabei <mgarabei@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 20:09:24 by mgarabei          #+#    #+#             */
-/*   Updated: 2023/07/20 19:19:44 by mgarabei         ###   ########.fr       */
+/*   Created: 2023/07/17 14:52:05 by mgarabei          #+#    #+#             */
+/*   Updated: 2023/07/20 19:03:40 by mgarabei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stddef.h>
+int	ft_char(int c)
+{
+	return (write(1, &c, 1));
+}
 
-int		ft_char(int c);
-int		ft_str(char *args);
-int		ft_ptr(unsigned long pointer);
-int		ft_nbr(int number);
-int		ft_unsigned_int(unsigned int u);
-int		ft_hex(unsigned int x, char x_case);
-int		ft_printf(const char *string, ...);
+int	ft_str(char *args)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	if (!args)
+		return (write(1, "(null)", 6));
+	while (args[i] != '\0')
+	{
+		ft_char(args[i]);
+		i++;
+	}
+	return (i);
+}
